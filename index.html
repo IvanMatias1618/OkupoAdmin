@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Okupo</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- Login Section -->
+      <section id="login-section" class="login-container">
+        <div class="login-box">
+          <h1>💎 Admin Okupo</h1>
+          <p>Inicia sesión para continuar</p>
+          <div id="login-error" class="error-message hidden"></div>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="email">Correo Electrónico</label>
+              <input type="email" id="email" required placeholder="admin@okupo.mx" />
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input type="password" id="password" required placeholder="••••••••" />
+            </div>
+            <button type="submit" class="btn-primary full-width">Iniciar Sesión</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Dashboard Section (Hidden initially) -->
+      <div id="dashboard-section" class="hidden">
+        <header>
+          <div class="header-content">
+            <h1>💎 Admin Okupo</h1>
+            <nav class="main-nav">
+              <button class="nav-link active" data-section="lista-pendientes">Pendientes</button>
+              <button class="nav-link" data-section="infrastructure-info">Inf</button>
+              <button class="nav-link" data-section="sql-console">SQL Console</button>
+            </nav>
+            <div class="header-right">
+              <div id="auth-status">Conectado</div>
+              <button id="btn-logout" class="btn-secondary">Cerrar Sesión</button>
+            </div>
+          </div>
+        </header>
+
+        <main class="container">
+          <!-- Pendientes Section -->
+          <section id="lista-pendientes" class="content-section">
+            <h2>Colaboradores Pendientes de Verificación</h2>
+            <div id="loading" class="hidden">Cargando...</div>
+            <div id="tabla-colaboradores">
+              <!-- Los datos se cargarán aquí -->
+              <p>No hay colaboradores pendientes.</p>
+            </div>
+          </section>
+
+          <!-- Infrastructure Info Section -->
+          <section id="infrastructure-info" class="content-section hidden">
+            <h2>Estructura de la Base de Datos</h2>
+            <p class="section-desc">Listado de tablas y columnas disponibles en el sistema.</p>
+            <div id="infrastructure-results" class="infra-container">
+              <div class="results-placeholder">Cargando estructura...</div>
+            </div>
+          </section>
+
+          <!-- SQL Console Section -->
+          <section id="sql-console" class="content-section hidden">
+            <h2>Consola SQL de Emergencia</h2>
+            <p class="section-desc">Ejecuta sentencias directamente en la base de datos de Finite. Úsalo con precaución.</p>
+            
+            <div class="sql-container">
+              <div class="sql-input-area">
+                <textarea id="sql-input" placeholder="SELECT * FROM usuario LIMIT 10;"></textarea>
+                <div class="sql-actions">
+                  <button id="btn-run-sql" class="btn-primary">Ejecutar Query</button>
+                  <button id="btn-clear-sql" class="btn-secondary">Limpiar</button>
+                </div>
+              </div>
+              
+              <div id="sql-results-container" class="sql-results-area">
+                <div class="results-placeholder">Los resultados aparecerán aquí...</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Modal de Verificación -->
+          <div id="modal-verificacion" class="modal hidden">
+            <div class="modal-content">
+              <span class="close-button">&times;</span>
+              <h2 id="modal-titulo">Verificar Colaborador</h2>
+              <div class="documentos-grid">
+                <div class="documento">
+                  <label>INE Frontal</label>
+                  <img id="img-ine-frontal" src="" alt="Cargando..." />
+                </div>
+                <div class="documento">
+                  <label>INE Trasera</label>
+                  <img id="img-ine-trasera" src="" alt="Cargando..." />
+                </div>
+                <div class="documento">
+                  <label>Comprobante Domicilio</label>
+                  <img id="img-comprobante" src="" alt="Cargando..." />
+                </div>
+                <div class="documento">
+                  <label>Selfie con INE</label>
+                  <img id="img-selfie" src="" alt="Cargando..." />
+                </div>
+              </div>
+              <div class="modal-acciones">
+                <button id="btn-rechazar" class="btn-danger">Rechazar</button>
+                <button id="btn-aprobar" class="btn-success">Aprobar</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

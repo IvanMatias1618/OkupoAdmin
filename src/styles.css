@@ -1,0 +1,383 @@
+/* Layout base */
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #333;
+  background-color: #f4f7f6;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Header */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #bdc3c7;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link.active {
+  color: white;
+  border-bottom: 2px solid #3498db;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#auth-status {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Login Section */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+
+.login-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.login-box p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #fecaca;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Botones */
+button {
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.5rem 1rem;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+/* Container & Cards */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.colaborador-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.colaborador-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.colaborador-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* SQL Console */
+.section-desc {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.sql-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sql-input-area textarea {
+  width: 100%;
+  height: 150px;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.sql-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sql-results-area {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  min-height: 200px;
+  overflow-x: auto;
+}
+
+.results-placeholder {
+  color: #999;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.sql-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.sql-table th, .sql-table td {
+  padding: 0.8rem;
+  border: 1px solid #eee;
+  text-align: left;
+}
+
+.sql-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.sql-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Infrastructure */
+.infra-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.table-card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table-card h3 {
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.column-list {
+  padding: 0.5rem 0;
+}
+
+.column-item {
+  padding: 0.4rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.column-name {
+  font-weight: 600;
+  color: #444;
+}
+
+.column-type {
+  color: #888;
+  font-family: monospace;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify(center, center);
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+}
+
+.documentos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.documento label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.documento img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.modal-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}

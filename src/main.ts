@@ -238,7 +238,11 @@ function renderizarTabla() {
   colaboradorSeleccionado = colaboradoresPendientes.find(c => c.id === id) || null;
   if (!colaboradorSeleccionado) return;
 
-  const fullUrl = (path: string | null) => path ? `${API_URL}${path}` : "https://via.placeholder.com/250?text=No+disponible";
+  const fullUrl = (path: string | null) => {
+    if (!path) return "https://via.placeholder.com/250?text=No+disponible";
+    if (path.startsWith("data:") || path.startsWith("http")) return path;
+    return `${API_URL}${path}`;
+  };
   
   imgIneFrontal.src = fullUrl(colaboradorSeleccionado.ine_frontal);
   imgIneTrasera.src = fullUrl(colaboradorSeleccionado.ine_trasera);

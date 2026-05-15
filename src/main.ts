@@ -241,7 +241,9 @@ function renderizarTabla() {
   const fullUrl = (path: string | null) => {
     if (!path) return "https://via.placeholder.com/250?text=No+disponible";
     if (path.startsWith("data:") || path.startsWith("http")) return path;
-    return `${API_URL}${path}`;
+    // Si la ruta no empieza con slash, se lo ponemos para evitar URLs rotas
+    const cleanPath = path.startsWith("/") ? path : `/${path}`;
+    return `${API_URL}${cleanPath}`;
   };
   
   imgIneFrontal.src = fullUrl(colaboradorSeleccionado.ine_frontal);
